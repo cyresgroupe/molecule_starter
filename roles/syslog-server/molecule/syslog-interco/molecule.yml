@@ -1,0 +1,34 @@
+---
+dependency:
+    name: galaxy
+driver:
+    name: docker
+lint:
+    name: yamllint
+    options:
+        config-data:
+            rules:
+                truthy: disable
+platforms:
+  - name: instance-syslog-server
+    image: milcom/centos7-systemd
+    privileged: true
+    groups:
+        - server
+  - name: instance-syslog-client
+    image: milcom/centos7-systemd
+    privileged: true
+    groups:
+        - client
+provisioner:
+    name: ansible
+    lint:
+      name: ansible-lint
+    playbooks:
+        prepare: prepare.yml
+scenario:
+    name: syslog-interco
+verifier:
+    name: testinfra
+    lint:
+      name: flake8

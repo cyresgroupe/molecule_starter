@@ -1,0 +1,3 @@
+---
+rsyslog_server: "server.mycompany.net"
+rsyslog_port: 514

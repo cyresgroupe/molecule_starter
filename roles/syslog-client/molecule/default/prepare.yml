@@ -1,0 +1,8 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+      - name: Install net-tools to use netstat component
+        yum:
+            name: net-tools
+            state: present

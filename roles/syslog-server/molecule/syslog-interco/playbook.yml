@@ -1,0 +1,21 @@
+---
+- name: Converge server
+  hosts: server
+  roles:
+    - role: syslog-server
+
+- name: Converge client
+  hosts: client
+  pre_tasks:
+    - name: Get server IP
+      command: hostname -I
+      register: ip
+      delegate_to: "{{groups['server'][0]}}"
+      changed_when: no
+
+    - name: Set facts
+      set_fact:
+          rsyslog_server: "{{ip.stdout}}"
+      changed_when: no
+  roles:
+    - syslog-client

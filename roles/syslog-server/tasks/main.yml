@@ -1,0 +1,17 @@
+---
+- name: Install Rsyslog package
+  yum:
+      name: rsyslog
+      state: present
+
+- name: Configure syslog server
+  template:
+      src: rsyslog.conf.j2
+      dest: /etc/rsyslog.conf
+  notify: restart rsyslog
+
+- name: Start syslog server
+  systemd:
+      name: rsyslog
+      state: started
+      enabled: yes

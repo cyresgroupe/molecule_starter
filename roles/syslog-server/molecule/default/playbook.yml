@@ -1,0 +1,5 @@
+---
+- name: Converge server
+  hosts: all
+  roles:
+    - role: syslog-server
