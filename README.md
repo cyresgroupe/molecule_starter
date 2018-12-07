@@ -6,6 +6,7 @@ Here is a Digital Ocean [article](https://www.digitalocean.com/community/tutoria
 
 ## II. Installation
 You can follow the steps in the article, or you can follow our. This repo works on RHEL server.
+In order to make it work I needed to install : python-devel & gcc
 - Install pip
 
 ```bash
