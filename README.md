@@ -4,7 +4,13 @@ Start with Ansible Molecule with this two Ansible Syslog roles
 ## I. Start with Molecule
 Here is a Digital Ocean [article](https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04), very good to start with
 
-## II. Installation
+## II. Preriquisites 
+- Docker engine : https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7
+- Python-devel packages (RHEL)
+- GCC packages
+- Git
+
+## III. Installation
 You can follow the steps in the article, or you can follow our. This repo works on RHEL server.
 In order to make it work I needed to install : python-devel & gcc
 - Install pip
@@ -21,7 +27,7 @@ $> pip install -r requirements.txt
 
 Now you can start playing with Molecule
 
-## III. Testing default scenarios
+## IV. Testing default scenarios
 ### Syslog-client
 ```bash
 $> cd roles
@@ -112,7 +118,7 @@ def test_socket_listening_udp(host):
     assert result.rc == 0 and '2' in result.stdout
 ```
 
-## IV. Use a custom scenario
+## V. Use a custom scenario
 In order to validate the client against the server, we create another scenario in the role Syslog-server. The scenario build two instances and configure them accordingly to the molecule.yml we made. (You can add as many as you want in a moleculized role)
 
 To init a scenario different from default :
