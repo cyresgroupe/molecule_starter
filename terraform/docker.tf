@@ -1,12 +1,4 @@
 ### AMI Part
-#data "aws_ami" "centos" {
-#  most_recent      = true
-#  filter {
-#    name   = "name"
-#    values = ["**centos-7.6-base**"]
-#  }
-#  owners = ["817257845790"]
-#}
 
 resource "aws_instance" "docker_instance" {
   ami           = "ami-0f0f5e1d6fd3f7eb6"

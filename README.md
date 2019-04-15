@@ -4,7 +4,7 @@ Start with Ansible Molecule with this two Ansible Syslog roles
 ## I. Start with Molecule
 Here is a Digital Ocean [article](https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04), very good to start with
 
-## II. Preriquisites 
+## II. Preriquisites
 - Docker engine : https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7
 - Python-devel packages (RHEL)
 - GCC packages
