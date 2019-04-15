@@ -22,7 +22,7 @@ Make sure to have easy_install. This is not the best way but it works for test a
 - Install requirements
 
 ```bash
-$> pip install -r requirements.txt
+$> pip install --ignore-installed -r requirements.txt
 ```
 
 Now you can start playing with Molecule
@@ -35,7 +35,7 @@ $> cd syslog-client
 $> molecule test
 [...]                   # This should works
 ```
-The command *test* launch every step of the default scenario. At the end the role works fine against the tests we wrote :
+The command *test* launch every step of the default scenario. At the end the role works fine for the tests we wrote :
 ```python
 [...]
 
@@ -211,9 +211,9 @@ options:
 ```
 
 #### Client internal IP
-We set up a tweak to get the internal IP of the instance. Ansible facts don't bring it to us...
+We set up a tweak to get the internal IP of the instance. Ansible facts don't gather it...
 #### Testinfra preriquisites
-We create a prepare playbook that is apply after the creation and before the converge step. This playbook install net-tools in order to let testinfra run some tests but without adding net-tools in the role itself. Very usefull...
+We create a prepare playbook that is applied after the *creation* and before the *converge* step. This playbook install net-tools in order allow some tests but without adding net-tools in the role itself. Very usefull !
 
 ### Test both roles
 ```bash

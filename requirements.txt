@@ -1,6 +1,7 @@
 ansible
 docker-py
 molecule
+PyYAML==3.13
 Jinja2>=2.10.1
 six==1.11.0
 requests>=2.18.0
