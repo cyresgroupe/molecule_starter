@@ -1,6 +1,6 @@
 ansible
 docker-py
 molecule
-Jinja2==2.10
+Jinja2>=2.10.1
 six==1.11.0
 requests>=2.18.0
