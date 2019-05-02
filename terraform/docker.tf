@@ -19,7 +19,7 @@ runcmd:
   - sudo systemctl enable docker
   - sudo usermod -aG docker ec2-user
   - sudo yum install git python-devel gcc -y
-  - sudo yum remove PyYAML python-request -y
+  - sudo yum remove PyYAML python-requests -y
   - sudo easy_install pip
   - sudo git clone https://github.com/cyresgroupe/molecule_starter.git /molecule_starter
   - sudo pip install -r /molecule_starter/requirements.txt
